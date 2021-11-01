@@ -2,7 +2,7 @@ import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import * as Application from 'expo-application';
 import React, { useState, useEffect, useRef } from "react";
-import { Text, View, Platform } from "react-native";
+import { Text, View, Platform, TextInput, StyleSheet } from "react-native";
 
 // Controls the behavior or incoming push notifications.
 Notifications.setNotificationHandler({
@@ -107,10 +107,19 @@ export default function App() {
       }}
     >
       <Text>Device Push Token:</Text>
-      <Text>{pushToken}</Text>
+      <TextInput onChangeText={() =>{}} value={pushToken} style={styles.input} />
 
       <Text>IDFV:</Text>
-      <Text>{idfv}</Text>
+      <TextInput onChangeText={() =>{}} value={idfv} style={styles.input} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
