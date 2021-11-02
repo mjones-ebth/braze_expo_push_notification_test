@@ -20,6 +20,7 @@ export default function App() {
   // We have the ability to react to incoming notifications while the user is in-app.
   // The "notification" state lets us know if a push notification has been received.
   const [notification, setNotification] = useState(false);
+  const [notificationContent, setNotificationContent] = useState("");
   const [notificationResponse, setNotificationResponse] = useState("");
 
   const notificationListener = useRef();
@@ -81,6 +82,7 @@ export default function App() {
     notificationListener.current =
       Notifications.addNotificationReceivedListener((notification) => {
         setNotification(notification);
+        setNotificationContent(notification);
       });
 
     // This listener is fired whenever a user taps on or interacts with a notification (works when app is foregrounded, backgrounded, or killed)
@@ -110,7 +112,7 @@ export default function App() {
       <Text>Notification</Text>
       <TextInput
         onChangeText={() => {}}
-        value={notification}
+        value={notificationContent}
         style={styles.input}
       />
 
