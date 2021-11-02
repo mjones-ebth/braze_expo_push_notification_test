@@ -1,6 +1,6 @@
 import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
-import * as Application from 'expo-application';
+import * as Application from "expo-application";
 import React, { useState, useEffect, useRef } from "react";
 import { Text, View, Platform, TextInput, StyleSheet } from "react-native";
 
@@ -20,6 +20,7 @@ export default function App() {
   // We have the ability to react to incoming notifications while the user is in-app.
   // The "notification" state lets us know if a push notification has been received.
   const [notification, setNotification] = useState(false);
+  const [notificationResponse, setNotificationResponse] = useState("");
 
   const notificationListener = useRef();
   const responseListener = useRef();
@@ -85,7 +86,7 @@ export default function App() {
     // This listener is fired whenever a user taps on or interacts with a notification (works when app is foregrounded, backgrounded, or killed)
     responseListener.current =
       Notifications.addNotificationResponseReceivedListener((response) => {
-        console.log(response);
+        setNotificationResponse(response);
       });
 
     // Remove the subscriptions and listeners on app close (For testing)
@@ -101,16 +102,34 @@ export default function App() {
     <View
       style={{
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
         padding: 15,
       }}
     >
+      <Text>Notification</Text>
+      <TextInput
+        onChangeText={() => {}}
+        value={notification}
+        style={styles.input}
+      />
+
+      <Text>Notification Response</Text>
+      <TextInput
+        onChangeText={() => {}}
+        value={notificationResponse}
+        style={styles.input}
+      />
+
       <Text>Device Push Token:</Text>
-      <TextInput onChangeText={() =>{}} value={pushToken} style={styles.input} />
+      <TextInput
+        onChangeText={() => {}}
+        value={pushToken}
+        style={styles.input}
+      />
 
       <Text>IDFV:</Text>
-      <TextInput onChangeText={() =>{}} value={idfv} style={styles.input} />
+      <TextInput onChangeText={() => {}} value={idfv} style={styles.input} />
     </View>
   );
 }
