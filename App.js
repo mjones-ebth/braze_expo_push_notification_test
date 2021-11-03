@@ -105,7 +105,7 @@ export default function App() {
       return <Text>Notification Received</Text>;
     }
 
-    return <View />;
+    return <Text>Notification not received</Text>;
   };
 
   return (
