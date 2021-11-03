@@ -100,6 +100,14 @@ export default function App() {
     };
   }, []);
 
+  const NotificationIndicator = () => {
+    if (notification) {
+      return <Text>Notification Received</Text>;
+    }
+
+    return <View />;
+  };
+
   return (
     <View
       style={{
@@ -132,6 +140,8 @@ export default function App() {
 
       <Text>IDFV:</Text>
       <TextInput onChangeText={() => {}} value={idfv} style={styles.input} />
+
+      <NotificationIndicator />
     </View>
   );
 }
