@@ -1,0 +1,46 @@
+{
+  "request": {
+    "trigger": {
+      "class": "UNPushNotificationTrigger",
+      "type": "push",
+      "payload": {
+        "aps": {
+          "sound": "default",
+          "mutable-content": 1,
+          "interruption-level": "active",
+          "alert": {
+            "body": "Oh no! You've been outbid on Small Leather Lamp!",
+            "title": "Outbid Alert 🚫"
+          },
+          "category": "ebth_cat_bid_increment"
+        },
+        "ab_uri": "ebth://https://localhost:3000/items/1-small-leather-lamp?utm_source=transactional&utm_medium=ios_push&utm_campaign=outbid&show=",
+        "ab": {
+          "att": {
+            "url": "https://ebth-com-development.imgix.net/2021/11/08/09/01/51/4f17d2ce-7543-4b1c-97ab-7830151a731a/014_1.jpg?ixlib=rb-3.1.0&w=400&h=400&fit=crop&crop=&auto=format",
+            "type": "jpg",
+            "aof": false
+          },
+          "c": "NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjgwXyRfZGk9NjE4OTRhMzcwNDA3ZWYwNTVjNmU2OTFlZWUwNWU4MWImbXY9NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjhhJnBpPWNtcA=="
+        }
+      }
+    },
+    "identifier": "outbid/1",
+    "content": {
+      "body": "Oh no! You've been outbid on Small Leather Lamp!",
+      "sound": "default",
+      "launchImageName": "",
+      "badge": null,
+      "subtitle": null,
+      "title": "Outbid Alert 🚫",
+      "data": null,
+      "summaryArgument": null,
+      "categoryIdentifier": "ebth_cat_bid_increment",
+      "attachments": [],
+      "threadIdentifier": "",
+      "targetContentIdentifier": null,
+      "summaryArgumentCount": 0
+    }
+  },
+  "date": 1636387389.9411592
+}

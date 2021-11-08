@@ -1,0 +1,46 @@
+{
+  "request": {
+    "trigger": {
+      "class": "UNPushNotificationTrigger",
+      "type": "push",
+      "payload": {
+        "aps": {
+          "sound": "default",
+          "mutable-content": 1,
+          "interruption-level": "active",
+          "alert": {
+            "body": "Oh no! You've been outbid on Intelligent Paper Wallet!",
+            "title": "Outbid Alert 🚫"
+          },
+          "category": "ebth_cat_bid_increment"
+        },
+        "ab_uri": "ebth://https://localhost:3000/items/3-intelligent-paper-wallet?utm_source=transactional&utm_medium=ios_push&utm_campaign=outbid&show=",
+        "ab": {
+          "att": {
+            "url": "https://ebth-com-development.imgix.net/2021/11/08/09/02/02/7120e6f0-f037-45f9-9b3f-0232e57e9a42/015_1.jpg?ixlib=rb-3.1.0&w=400&h=400&fit=crop&crop=&auto=format",
+            "type": "jpg",
+            "aof": false
+          },
+          "c": "NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjgwXyRfZGk9NjE4OTRiYjBlNmVmM2M2MzQ5OGZiMzg0YjU4MDIxZjYmbXY9NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjhhJnBpPWNtcA=="
+        }
+      }
+    },
+    "identifier": "outbid/3",
+    "content": {
+      "body": "Oh no! You've been outbid on Intelligent Paper Wallet!",
+      "sound": "default",
+      "launchImageName": "",
+      "badge": null,
+      "subtitle": null,
+      "title": "Outbid Alert 🚫",
+      "data": null,
+      "summaryArgument": null,
+      "categoryIdentifier": "ebth_cat_bid_increment",
+      "attachments": [],
+      "threadIdentifier": "",
+      "targetContentIdentifier": null,
+      "summaryArgumentCount": 0
+    }
+  },
+  "date": 1636387764.2649825
+}
