@@ -88,6 +88,7 @@ export default function App() {
     // This listener is fired whenever a user taps on or interacts with a notification (works when app is foregrounded, backgrounded, or killed)
     responseListener.current =
       Notifications.addNotificationResponseReceivedListener((response) => {
+        setNotification(notification);
         setNotificationResponse(response);
       });
 
@@ -99,14 +100,6 @@ export default function App() {
       Notifications.removeNotificationSubscription(responseListener.current);
     };
   }, []);
-
-  const NotificationIndicator = () => {
-    if (notification) {
-      return <Text>Notification Received</Text>;
-    }
-
-    return <Text>Notification not received</Text>;
-  };
 
   return (
     <View
@@ -120,14 +113,14 @@ export default function App() {
       <Text>Notification</Text>
       <TextInput
         onChangeText={() => {}}
-        value={notificationContent}
+        value={JSON.stringify(notificationContent)}
         style={styles.input}
       />
 
       <Text>Notification Response</Text>
       <TextInput
         onChangeText={() => {}}
-        value={notificationResponse}
+        value={JSON.stringify(notificationResponse)}
         style={styles.input}
       />
 
@@ -141,7 +134,9 @@ export default function App() {
       <Text>IDFV:</Text>
       <TextInput onChangeText={() => {}} value={idfv} style={styles.input} />
 
-      <NotificationIndicator />
+      <Text>
+        {notification ? "notification received" : "no notification received"}
+      </Text>
     </View>
   );
 }
