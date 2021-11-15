@@ -3,6 +3,7 @@ import * as Notifications from "expo-notifications";
 import * as Application from "expo-application";
 import React, { useState, useEffect, useRef } from "react";
 import { Text, View, Platform, TextInput, StyleSheet } from "react-native";
+import * as Linking from "expo-linking";
 
 // Controls the behavior or incoming push notifications.
 Notifications.setNotificationHandler({
@@ -22,6 +23,7 @@ export default function App() {
   const [notification, setNotification] = useState(false);
   const [notificationContent, setNotificationContent] = useState("");
   const [notificationResponse, setNotificationResponse] = useState("");
+  const [deepLinkAddress, setDeepLinkAddress] = useState("");
 
   const notificationListener = useRef();
   const responseListener = useRef();
@@ -72,6 +74,11 @@ export default function App() {
         lightColor: "#FF231F7C",
       });
     }
+  };
+
+  const getInitialLinkAsync = async () => {
+    const initialLink = await Linking.getInitialURL();
+    setDeepLinkAddress(initialLink);
   };
 
   // Upon rendering, register for push.
@@ -133,6 +140,13 @@ export default function App() {
 
       <Text>IDFV:</Text>
       <TextInput onChangeText={() => {}} value={idfv} style={styles.input} />
+
+      <Text>Deep Link:</Text>
+      <TextInput
+        onChangeText={() => {}}
+        value={deepLinkAddress}
+        style={styles.input}
+      />
 
       <Text>
         {notification ? "notification received" : "no notification received"}

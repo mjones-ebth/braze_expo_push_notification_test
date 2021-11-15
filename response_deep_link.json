@@ -1,0 +1,46 @@
+{
+  "request": {
+    "trigger": {
+      "class": "UNPushNotificationTrigger",
+      "type": "push",
+      "payload": {
+        "aps": {
+          "sound": "default",
+          "mutable-content": 1,
+          "interruption-level": "active",
+          "alert": {
+            "body": "Oh no! You've been outbid on Beatriz Vidal Abstract Colored Pencil Illustration of Sea and Sky!",
+            "title": "Outbid Alert 🚫"
+          },
+          "category": "ebth_cat_bid_increment"
+        },
+        "ab_uri": "ebth://browse/item/7133",
+        "ab": {
+          "att": {
+            "url": "https://ebth-com-staging.imgix.net/2021/10/20/10/13/33/07fcb504-3fe7-40dd-854c-9dc08051d2bf/file?ixlib=rb-3.1.0&w=400&h=400&fit=crop&crop=&auto=format",
+            "type": "jpg",
+            "aof": false
+          },
+          "c": "NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjgwXyRfZGk9NjE4ZWM1YTYxZjc1ZThiZWU1Yjk1YjM5MGI2YzkxMjUmbXY9NTlmYjc5NTc1NmVjMzEwNDc5YzEyYjhhJnBpPWNtcA=="
+        }
+      }
+    },
+    "identifier": "outbid/7133",
+    "content": {
+      "body": "Oh no! You've been outbid on Beatriz Vidal Abstract Colored Pencil Illustration of Sea and Sky!",
+      "sound": "default",
+      "launchImageName": "",
+      "badge": null,
+      "subtitle": null,
+      "title": "Outbid Alert 🚫",
+      "data": null,
+      "summaryArgument": null,
+      "categoryIdentifier": "ebth_cat_bid_increment",
+      "attachments": [],
+      "threadIdentifier": "",
+      "targetContentIdentifier": null,
+      "summaryArgumentCount": 0
+    }
+  },
+  "date": 1636746665.2122881
+}
